@@ -101,7 +101,7 @@
       &::before {
         content: url("../images/bg-pattern-intro-left-desktop.svg");
         top: initial;
-        bottom: unquote($string: "min(calc(1000px - 100vw) * -1.7 , -30rem)");
+        bottom: unquote($string: "min(calc(1000px - 100vw) * -1.85 , -30rem)");
         left: -1%;
         transform: scale(.95);
       }

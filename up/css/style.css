@@ -80,6 +80,7 @@ input[type="text"] {
 
 main {
   position: relative;
+  overflow-x: hidden;
 }
 
 .container {
@@ -306,7 +307,7 @@ header .nav .nav__hamburger:checked + .nav__list {
   .hero__left::before {
     content: url("../images/bg-pattern-intro-left-desktop.svg");
     top: initial;
-    bottom: min(calc(1000px - 100vw) * -1.7 , -30rem);
+    bottom: min(calc(1000px - 100vw) * -1.85 , -30rem);
     left: -1%;
     transform: scale(0.95);
   }
