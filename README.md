@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Click Here 🚀](https://github.com/ubed90/insure-landing-page)
-- Live Site URL: [Click Here 🚀](https://your-live-site-url.com)
+- Live Site URL: [Click Here 🚀](https://ubed90.github.io/insure-landing-page/)
 
 ## My process
 
