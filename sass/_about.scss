@@ -1,0 +1,133 @@
+.about {
+  .container {
+    text-align: center;
+    padding: unquote($string: "max(calc(15vh + 8vw) , 5rem)") 2rem
+      unquote($string: "max(calc(10vh + 5vw) , 5rem)");
+  }
+
+  &__title {
+    width: max-content;
+    margin: 0 auto;
+    font-size: unquote($string: "clamp(2.4rem , 5vh , 6rem)");
+    line-height: 1;
+    color: var(--clr-tertiary);
+    font-weight: 400;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 45%;
+      height: 0.1rem;
+      opacity: 0.8;
+      top: -60%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--clr-quaternary);
+    }
+  }
+
+  &__grid {
+    margin-block: 7rem 10rem;
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__title {
+        line-height: 1;
+        color: var(--clr-tertiary);
+        font-size: 2.4rem;
+
+        margin-block: 3.2rem 1.7rem;
+      }
+
+      &__text {
+        color: var(--clr-quaternary);
+      }
+    }
+
+    &--item:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__findOutMore {
+    background-color: var(--clr-primary);
+    color: var(--clr-quinary);
+
+    background-image: url("../images/bg-pattern-how-we-work-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 50% 95%;
+    background-position: top right;
+
+    padding: 7rem 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    &--title {
+      font-size: unquote($string: "clamp(4.5rem , 4vw , 5rem)");
+      font-weight: 400;
+      max-width: 17ch;
+    }
+
+    .btn {
+      color: var(--clr-white);
+      border-width: 0.2rem;
+      padding: 0.7rem 3rem;
+      transition: 0.4s;
+
+      &:hover {
+        color: var(--clr-primary);
+        background-color: var(--clr-white);
+      }
+    }
+  }
+
+  @include media-tablet {
+    .container {
+      text-align: left;
+      padding-top: unquote($string: "max(calc(13vh + 9vw) , 5rem)");
+      padding-bottom: unquote($string: "max(calc(7vh + 4vw) , 5rem)");
+    }
+
+    &__title {
+      margin: 0;
+
+      &::before {
+        left: 0;
+        transform: none;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.6rem;
+
+      &--item {
+        align-items: flex-start;
+        justify-content: initial;
+      }
+    }
+
+    &__findOutMore {
+      padding: 5rem;
+      flex-direction: row;
+      justify-content: space-between;
+
+      background-image: url("../images/bg-pattern-how-we-work-desktop.svg");
+      background-size: 40% 100%;
+
+      &--title {
+        max-width: initial;
+        line-height: 1;
+      }
+    }
+  }
+}

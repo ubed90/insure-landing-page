@@ -1,0 +1,128 @@
+.hero {
+  background-color: var(--clr-primary);
+  color: var(--clr-quinary);
+
+  .container {
+    display: grid;
+    grid: repeat(2, auto) / 1fr;
+    padding: 0;
+  }
+
+  &__left {
+    padding: unquote($string: "max(10vh, 5rem)") 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    &--title {
+      font-size: unquote($string: "clamp(2.4rem , calc(1.6rem + 1vh + 2vw) , 6rem)");
+      line-height: 1;
+      position: relative;
+    }
+
+    &--text {
+      margin-block: 2rem 3.5rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      margin-inline: 3rem;
+    }
+
+    &--btn {
+      text-transform: uppercase;
+      color: var(--clr-quinary) !important;
+      padding: 0.7rem 2.7rem;
+      border: 0.2rem solid var(--clr-quinary);
+      transition: 0.4s;
+
+      &:hover {
+        background-color: var(--clr-quinary);
+        color: var(--clr-primary) !important;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      content: url("../images/bg-pattern-intro-left-mobile.svg");
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: url("../images/bg-pattern-intro-right-mobile.svg");
+      bottom: -40%;
+      right: 0;
+    }
+  }
+
+  &__right {
+    order: -1;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include media-tablet {
+    position: relative;
+
+    .container {
+      display: grid;
+      grid: 1fr / repeat(2, 1fr);
+      grid-gap: 0 1.6rem;
+      padding: 3rem 2rem;
+    }
+
+    &__left {
+      padding: 0;
+      align-self: center;
+      text-align: left;
+      position: initial;
+
+      &--title::before {
+        content: "";
+        position: absolute;
+        width: 25%;
+        height: .1rem;
+        background-color: var(--clr-quinary);
+        top: -50%;
+      }
+
+      &--text {
+        margin-block: 2rem 3.5rem;
+        margin-inline: 0;
+      }
+
+      &::before {
+        content: url("../images/bg-pattern-intro-left-desktop.svg");
+        top: initial;
+        bottom: unquote($string: "min(calc(1000px - 100vw) * -1.7 , -30rem)");
+        left: -1%;
+        transform: scale(.95);
+      }
+    
+      &::after {
+        content: url("../images/bg-pattern-intro-right-desktop.svg");
+        bottom: initial;
+        top: 0; 
+        right: unquote($string: "min(calc(1000px - 100vw) * -1 , -20px)");
+      }
+    }
+
+    &__right {
+      align-self: center;
+      order: initial;
+      position: relative;
+      top: 18%;
+      
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+:root {
+  font-size: 62.5%;
+  --clr-primary: hsl(256, 26%, 20%);
+  --clr-secondary: hsl(216, 30%, 68%);
+  --clr-tertiary: hsl(270, 9%, 17%);
+  --clr-quaternary: hsl(273, 4%, 51%);
+  --clr-quinary: hsl(0, 0%, 98%);
+
+  --clr-main: hsl(237, 63%, 64%);
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-white-m: rgba(255, 255, 255, 0.3);
+  --clr-black: hsla(0, 0%, 0%);
+  --clr-bb: hsla(0, 0%, 0%, 0.15);
+}
+
+body {
+  background-color: var(--clr-white);
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-quaternary);
+}
+
+input[type="text"] {
+  //   -moz-appearance: textfield;
+  min-width: 0;
+  box-sizing: border-box !important;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5rem;
+
+  @include media-tablet {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.desktop-none {
+  @include media-tablet {
+    display: none !important;
+  }
+}
+
+.serif {
+  font-family: "DM Serif Display", serif;
+}
+
+main {
+  position: relative;
+}
+
+.container {
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.white {
+  color: var(--clr-white);
+  border: 0.1rem solid var(--clr-white);
+}
